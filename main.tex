@@ -110,7 +110,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         Management of SWIFT is organized among three groups (marketing, IT operations, and finance and administration) and two functions (legal and human resources), across three regions (Americas, Asia-Pacific, and EMEA). Marketing has a broad brief encompassing product portfolio management, global communication, innovation, and standards. IT operations is not only responsible for the day-to-day running of the SWIFT network but also product development and security control. Finance and administration is responsible for financial management, corporate planning, and pricing of products as well as all internal support functions such as procurement, internal IT, and office management.
         Payments between counterparties are not generally processed instantly, which means that payment systems will often process payments and monetary claims on the basis of “promises to pay”, rather than actual transfer of funds. To facilitate this exchange and guarantee as much as possible the completion of the transaction, payment systems initiate a sequence of events that involves a number of financial institutions and technologies such as banks, clearinghouses, data transmission links, and electronic accounting systems. There are generally three basic stages or processes which are triggered each time a payment needs to be executed, as we can see in table \ref{tab:steptable}.
 
-                % Please add the following required packages to your document preamble:
+        % Please add the following required packages to your document preamble:
         % \usepackage{booktabs}
         \begin{table}[H]
         \caption{Description of payment system processes.}
@@ -140,7 +140,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{figures/swiftcloud.png}
-        \caption{Y-copy message fl ow via SWIFTNet.}
+        \caption{Y-copy message flow via SWIFTNet.}
         \label{fig:swiftcloud}
         \end{figure}
        
@@ -151,7 +151,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{figures/swift.png}
-        \caption{Swift}
+        \caption{Local SWIFT infrastructure model}
         \label{fig:Swift}
         \end{figure}
         
@@ -167,7 +167,13 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \end{itemize}
         
     \subsection{Timeline of high-profile SWIFT-related attacks}
-    
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/timelinefinal.jpg}
+        \caption{Timeline of the attacks}
+        \label{fig:timelineattacks}
+        \end{figure}
+        
     \subsubsection{Sonali Bank, Bangladesh - 2013}
         Sonali Bank Limited is a state-owned commercial bank in Bangladesh. It is one of the the largest bank of the country.
         
@@ -211,31 +217,15 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
     \subsubsection{Tien Phong Bank, Vietnam - December, 2015}
     
-        Tien Phong Commercial Joint Stock Bank, based in Hanoi, foiled a plot to transfer \$1.13 million out of its accounts - via the interbank SWIFT messaging system - in the fourth quarter of 2015 as part of a malware attack. The attempted attack did not cause any losses. 
+        Tien Phong Commercial Joint Stock Bank, based in Hanoi, on May 15 said in a statement to Reuters that it detected suspicious transfer requests for \$1.13 million out of its accounts - via the interbank SWIFT messaging system - in the fourth quarter of 2015 as part of a malware attack. The attempted attack did not cause any losses as the bank was quick enough to contact receiving banks and put a stop to the transfers.
         
-        Initially reported in May 13 as an unnamed Southeast Asian bank, on May 16 the bank announced the 
+        The State Bank of Vietnam - the country's central bank – started the investigation on the attack after having received related information from TPBank on May 16.
         
-        During the attack on TPB, attackers used malware that specifically targeted the Foxit PDF reader, which was known to be used by the bank employees when viewing SWIFT statements. Attackers were able to install a malicious version of the Foxit PDF reader on employee workstations, which altered statements (when opened) in order to hide evidence of any malicious activity. This malware was found to be installed on infrastructure provided by a third-party vendor, specifically used to provide the bank’s connection into the SWIFT messaging network. 
+        SWIFT declined to comment on those reports, except to point to a May 13 security alert that it sent to its customers, warning them of "a highly adaptive campaign targeting banks' payment endpoints." That warning said an unnamed Vietnamese bank had been targeted. This led to referring to this attack as an attack towards an “unnamed South-East Asian bank”.\cite{SWIFTWarnsBanks}
         
-        Employees at TPB identified suspicious SWIFT messages and rapidly contacted all parties involved. This prevented the transfer requests from being completed and the attempt to steal was halted.
+        TPBank's statement said the fraudulent transfer requests were made using an unnamed third-party vendor with which the bank had contracted, to allow it to interface with the SWIFT network. The bank said that in the wake of the fraudulent transfer requests, it stopped working with the third-party provider and now has a more secure system which directly interfaces with the SWIFT platform.
         
-        The bank, in the wake of the fraudulent transfer requests, stopped working with the third-party provider and now has a more secure system which directly interfaces with the SWIFT platform.
-
-        Security researcher Christiaan Beek found the SWIFT code for the target in multiple places in the malware used for the attack, highlighting the targeted nature of the attack.  
-        
-        The code TPBVVNVX is the SWIFT code for the Tienphong Commercial Joint Stock Bank in Hanoi. He also noticed that there were more SWIFT codes in the code:
-        \begin{itemize}
-            \item UOVBSGSGXXX United Overseas Bank Ltd, Singapore
-            \item ANZBAU3MXXX Australia and New Zealand Banking Group Ltd, Melbourne, Australia
-            \item BOTKJPJTXXX Bank of Tokyo-Mitsubishi UFJ Ltd, Tokyo, Japan
-            \item MHCBJPJTXXX Mizuho Bank Ltd, Tokyo, Japan
-            \item CZNBKRSEXXX Kookmin Bank, Seoul, South Korea
-            \item UNCRITMMXXX Unicredit S.P.A., Milan, Italy
-            \item ICBKVNVNXXX Industrial and Commercial Bank of China, Hanoi branch, Vietnam
-            \item ICBKUS33XXX Industrial and Commercial Bank of China, New York branch, United States
-        \end{itemize}
-       
-        The malware reads the SWIFT messages and checks if the sender of the message is one of the listed banks. Once it finds these messages, it reads their information. The malware can manipulate these messages: deleting transactions, transaction history, and system logs, and prevent the printing of the fraudulent transactions.
+        It was later discovered that the attack against have been carried out using a Trojanized PDF reader. The malware used to target the bank replaces Foxit's PDF reader software,  which was known to be used by the bank employees when viewing SWIFT statements, to mask records of SWIFT transactions when read. When reports are read through the PDF reader, SWIFT records are altered to remove traces of fraudulent transactions.
         
         \begin{figure}[H]
         \centering
@@ -243,21 +233,42 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \caption{Tien Phong Bank Hack}
         \label{fig:VietnamHacks}
         \end{figure}
+
+        Attackers were able to install a malicious version of the Foxit PDF reader on employee workstations, which altered statements (when opened) in order to hide evidence of any malicious activity. This malware was found to be installed on infrastructure provided by a third-party vendor, specifically used to provide the bank’s connection into the SWIFT messaging network, as initially stated by TPBank.
         
-        https://www.kaspersky.com/about/press-releases/2017_chasing-lazarus-a-hunt-for-the-infamous-hackers-to-prevent-large-bank-robberies
-        https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180244/Lazarus_Under_The_Hood_PDF_final.pdf
-        https://www.wsj.com/articles/vietnamese-bank-says-it-was-target-of-attempted-cyber-heist-1463405095
-        https://www.wsj.com/articles/swift-finds-evidence-of-second-malware-attack-1463102215?mod=article_inline
-        https://www.databreachtoday.com/vietnamese-bank-blocks-1-million-swift-heist-a-9105
-        https://www.databreachtoday.com/5-swift-cyber-heist-investigations-a-9160
-        https://www.mcafee.com/blogs/other-blogs/mcafee-labs/attacks-swift-banking-system-benefit-insider-knowledge/?hilite=%27Tien%27%2C%27Phong%27
-        https://www.databreachtoday.com/swift-warns-banks-coordinated-malware-attacks-underway-a-9101
-        https://www.swift.com/insights/press-releases/swift-customer-communication_customer-security-issues
-        https://www.nytimes.com/2016/05/13/business/dealbook/swift-global-bank-network-attack.html
-        https://www.theregister.co.uk/2016/05/13/swift_credential_hack_reoaded/
-        https://money.cnn.com/2016/05/26/technology/swift-bank-hack-philippines-lazarus/?iid=EL
-        https://hacked.com/symantec-swift-malware-evident-bank-attacks/
-        https://www.databreachtoday.com/swift-warns-banks-coordinated-malware-attacks-underway-a-9101
+        Employees at TPB identified suspicious SWIFT messages in time and contacted all parties involved. This prevented the transfer requests from being completed and the attempt to steal was halted.
+        
+        BAE Systems stated that it did not have enough evidence to incontrovertibly attribute the hack but it said currently available evidence strongly suggested a connection to the group conducting other similar attacks.\cite{VietnameseBankBlocks}
+        
+        This attack represent an interesting case due to the months of cooperation between TPB and Kaspersky Lab that uncovered more and more tools hidden deep inside the bank's infrastructure. The second relevant characteristic is the persistence of the attackers: once the contact between that bank and Kaspersky Lab was established, the attackers somehow realized that the behavior of system administrators was not normal and soon after that they started wiping all traces of their activity. However, kaspersky Lab managed to collect and build a rough timeline of some of their operations, as we can see in figure \ref{fig:lazarustimeline}. 
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/lazarus-timeline.png}
+        \caption{Timeline of the Tien Phong Bank attack according to Kaspersky Lab.}
+        \label{fig:lazarustimeline}
+        \end{figure}
+        
+        The investigation suggests attacker activity around 2016-02-04 14:07:07 (UTC) that was also the date of the Bangladesh cyberheist. It was also discovered that the malware used in the two attacks present some visible similarities. 
+        
+        Due to the age of the breach inside the bank it was not very clear how the attackers initially breached the bank. However, what becomes apparent is that they used a web server located in the bank to connect via Terminal Services to the one linking to SWIFT connected systems.
+        
+        The web server installation was quite new: it had hosted the company's new website for just a few months before it was compromised. The bank even contracted a pentesting company to do a security assessment of the new website which was ongoing when the attackers breached the server.\cite{kasperskycontenthub}
+
+        Security researcher Christiaan Beek found the code TPBVVNVX - which is the SWIFT code for the Tien Phong Commercial Joint Stock Bank in Hanoi - hidden in multiple parts of the malware used for the attack.
+        He also noticed that there were more SWIFT codes in the code:
+        \begin{itemize}
+            \item UOVBSGSGXXX - United Overseas Bank Ltd, Singapore
+            \item ANZBAU3MXXX - Australia and New Zealand Banking Group Ltd, Melbourne, Australia
+            \item BOTKJPJTXXX - Bank of Tokyo-Mitsubishi UFJ Ltd, Tokyo, Japan
+            \item MHCBJPJTXXX - Mizuho Bank Ltd, Tokyo, Japan
+            \item CZNBKRSEXXX - Kookmin Bank, Seoul, South Korea
+            \item UNCRITMMXXX - Unicredit S.P.A., Milan, Italy
+            \item ICBKVNVNXXX - Industrial and Commercial Bank of China, Hanoi branch, Vietnam
+            \item ICBKUS33XXX Industrial and Commercial Bank of China, New York branch, United States
+        \end{itemize}
+       
+         Other than the behaviour above-mentioned, the malware reads the SWIFT messages and checks if the sender of the message is one of the listed banks. Once it finds these messages, it reads their information and then it can manipulate these messages. This information suggest that at a certain point one of the intent of the attack would have involved these potential targets.\cite{AttacksSWIFTBanking2016}
         
     \subsubsection{The Bank of Bangladesh, Bangladesh - February, 2016}
         
@@ -300,13 +311,22 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
    
     \subsubsection{Polish Financial Supervision Authority (Komisja Nadzoru Finansowego) - January, 2017}
         
-        https://github.com/mungurk/apt_38/blob/master/FireEye_Compromise_of_KNF_Website_Likely_Part_of_Global_Campaign_Targeting_Financial_Institutions.pdf
-        https://www.blackhat.com/docs/eu-17/materials/eu-17-Shen-Nation-State%20Moneymules-Hunting-Season-APT-Attacks-Targeting-Financial-Institutions.pdf
-        https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180244/Lazarus_Under_The_Hood_PDF_final.pdf
-        https://securityaffairs.co/wordpress/56056/cyber-crime/polish-banks-malware.html
-        https://badcyber.com/several-polish-banks-hacked-information-stolen-by-unknown-attackers/
-        https://www.bleepingcomputer.com/news/security/polish-banks-infected-with-malware-hosted-on-their-own-governments-site/
+        In early February 2017, the Polish Financial Supervision Authority (KNF) took its systems offline after discovering that malicious code had been placed on its webserver and was being used to redirect designated targets to malicious payloads. Subsequent public reporting indicates that multiple Polish banks have confirmed that they had identified malware on their systems. Based on further analysis, it is believed that this campaign was more widespread and was intended to primarily target financial institutions.
         
+        On Feb. 3, 2017, InfoSec news blog badcyber reported that multiple Polish commercial banks were allegedly infected with malware. The initial investigation suggested that the initial infection vector occurred via the KNF website (figure \ref{fig:knf}). FireEye iSIGHT Intelligence confirmed that unauthorized code was being hosted in a JavaScript file on the KNF domain, which was being used to redirect visitors to an exploit kit landing page. 
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/knf.png}
+        \caption{http://www.knf.gov.pl}
+        \label{fig:knf}
+        \end{figure}
+        
+        A whitelist of IP addresses observed in conjunction with the KNF incident specified which individuals would receive the designated payload. The whitelist contained IP addresses associated with 104 organizations, many of which are in the financial sector. This whitelist suggests that the threat actors were highly selective in choosing their targets. Most of the whitelisted IP addresses correspond to Polish financial institutions. 
+        
+        Based on indicators gleaned from open-source reporting, malware associated with the KNF compromise has previously been observed in past SWIFT-related intrusion activity. Given this similarity, it is plausible that KNF intrusion activity shares at least some operational overlap with the SWIFT manipulation attacks widely reported in 2016; however, attribution of this activity is not conclusive.\cite{MungurkApt38}
+       
+        There is currently no evidence of monetary loss associated with affected Polish banks. However, one media report claimed that a large amount of data was stolen from one Polish financial institution. the nature of the data that was stolen is unclear.\cite{WlamaniaKilkuBankow}\cite{badcyberSeveralPolishBanks2017}\cite{PolishBanksInfected}
     
     \subsubsection{Russian bank - 2017}
         
@@ -342,28 +362,37 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
     \subsubsection{City Union Bank, India -  February, 2018}
         
-        https://securityaffairs.co/wordpress/69268/cyber-crime/city-union-bank-hack.html
-        https://www.reuters.com/article/us-city-union-bank-swift/indias-city-union-bank-ceo-says-suffered-cyber-hack-via-swift-system-idUSKCN1G20AF
+        On Sunday, February 18, the Indian bank Kumbakonam-based City Union Bank announced that cyber criminals compromised its systems and transferred a total of \$1.8 million.  
+        
+        The Indian bank confirmed that it has suffered a security breach launched international cyber-criminals and there is no evidence of internal staff involvement. 
+        
+        During the reconciliation process on February 7, it was found out that 3 fraudulent remittances had gone through our SWIFT system to corespondent banks which were not initiated from the bank. The operators immediately alerted the correspondent banks to recall the funds.
+
+        One transaction of \$500,000 that was made through Standard Chartered Bank, New York, to a Dubai based bank was immediately blocked. A second transfer of 300,000 euros (\$372,150) was routed through a Standard Chartered Bank account in Frankfurt to a Turkish account, although the Turkish lender had blocked the transfer from being finalised. A third totaling \$1 million was sent through a Bank of America account in New York to a China-based bank identified as Zhejiang Rural Credit Cooperative Union in Hangzhou, China.\cite{CityUnionBank2018}\cite{IndiaCityUnion2018}
+
         
     \subsubsection{Banco de Chile - May, 2018}
         
-        https://www.bankinfosecurity.com/banco-de-chile-loses-10-million-in-swift-related-attack-a-11075
-        https://www.bleepingcomputer.com/news/security/hackers-crashed-a-bank-s-computers-while-attempting-a-swift-hack/
-        https://threatpost.com/banco-de-chile-wiper-attack-just-a-cover-for-10m-swift-heist/132796/
+        Banco de Chile, the country's second largest bank, on May 24 lost about \$10 million due to fraudulent SWIFT wire transfers. The theft happened while the bank was dealing with hundreds of workstations and servers that suddenly stopped working.
+        
+        Researchers with business risk intelligence firm Flashpoint say they've analyzed the malware used for the distraction portion of the attack against Banco de Chile. It's MBR Killer, a component of Buhtrap, a malware a-la NotPetya that first struck Russian banks in 2015. Buhtrap is a portmanteau of the Russian word "buhfalter" that means accountant, and trap. MBR Killer tampers with the master boot record, the first sector of a hard drive that the computer calls on before loading the operating system. The component renders the local operating system and MBR unreadable. The source code for Buhtrap leaked in early 2016, that means any group could be using it now to cause havoc. According to a screenshot of private IM conversations posted on a Chilean forum, the alleged "virus" crashed over 9,000 computers and over 500 servers. This malware didn't bother showing a ransom note and just wiped computer's MBRs, leaving them in a non-bootable state.
+        
+        Banco de Chile General Manager Eduaro Ebensperger Orrego told the publication Latercera that it was eventually determined the initial attacks were likely a distraction. The real target was the bank's SWIFT system. The bank was able to stop some of the fraudulent transactions. 
+        
+        The attribution behind the Banco de Chile attack remains uncertain.
+        “It is notable, however, that Chilean financial institutions were targeted entities by the Lazarus Group, which was linked to North Korea, during the compromise of the Polish Financial Supervision Authority website in 2017,” Vitali Kremez, director of research, told Threatpost in an interview. 
+
+        \cite{HackersCrashedBank}\cite{BancoChileWiper}\cite{BancoChileLoses}
         
     \subsubsection{Cosmos Bank, India - August, 2018}
+        Cosmos Bank is a 112-year old cooperative bank in India and it is the second largest in the country. Between August 10 and 13, 2018, over \$13.5 million were stolen with an attack using multiple techniques, targeting both ATMs and the SWIFT environment. 
         
-        https://www.securonix.com/securonix-threat-research-cosmos-bank-swift-atm-us13-5-million-cyber-attack-detection-using-security-analytics/
-   
-    \subsubsection{Chilean Redbanc - December, 2018}
+        On August 11, 2018, the bank’s internal and ATM infrastructure was compromised. The exploit involved multiple malware leveraging a set of malicious libraries with a malicious ATM/POS switch in parallel with the existing Central and then selectively breaking the connection between the Central and the Core Banking System. The use of the malicious switch allowed the attackers to execute ATM withdrawals for over \$11.5 million in 2849 domestic  and 12000 international transactions using 450 cloned debit cards in 28 countries.
         
-        https://www.flashpoint-intel.com/blog/disclosure-chilean-redbanc-intrusion-lazarus-ties/
-        https://www.trendtic.cl/2019/01/exclusivo-asi-fue-el-intento-de-ciberataque-a-redbanc-en-diciembre/
+        On August 13, 2018, the malicious threat actor continued the attack against Cosmos Bank by using the Cosmos bank’s SWIFT credentials to successfully send three malicious transaction to ALM Trading Limited at Hang Seng Bank in Hong Kong amounting to around \$2 million.\cite{CosmosBankSWIFT2018}\cite{PoliceInvestigateCosmos}
         
     \subsubsection*{Other attacks}
         
-        https://outline.com/svnPBk 
-        https://outline.com/2VPK82
         https://www.reuters.com/article/us-russia-cyber-globex/russias-globex-bank-says-hackers-targeted-its-swift-computers-idUSKBN1EF294 
         https://www.bankinfosecurity.com/hackers-target-swift-using-banks-odinaff-malware-a-9451
         https://www.pindrop.com/blog/theres-another-hacking-team-going-after-swift-banks/
