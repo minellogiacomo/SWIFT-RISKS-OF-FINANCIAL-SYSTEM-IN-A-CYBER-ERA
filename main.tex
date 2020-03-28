@@ -15,6 +15,8 @@
 \usepackage[export]{adjustbox}
 \usepackage{csquotes}
 \usepackage{tikz}
+\usepackage{xcolor}
+
 %indent chapters
 \usepackage{indentfirst}
 \setlength\parindent{0pt}
@@ -130,7 +132,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/vshape.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/vshape.png}
         \caption{V-shaped message flow structure.}
         \label{fig:vshape}
         \end{figure}
@@ -139,7 +141,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/swiftcloud.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/swiftcloud.png}
         \caption{Y-copy message flow via SWIFTNet.}
         \label{fig:swiftcloud}
         \end{figure}
@@ -169,7 +171,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
     \subsection{Timeline of high-profile SWIFT-related attacks}
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/timelinefinal.jpg}
+        \includegraphics[width=\textwidth, cfbox=red 0.1mm 0.1mm]{figures/timelinefinal.jpg}
         \caption{Timeline of the attacks}
         \label{fig:timelineattacks}
         \end{figure}
@@ -216,7 +218,6 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \end{figure}
         
     \subsubsection{Tien Phong Bank, Vietnam - December, 2015}
-    
         Tien Phong Commercial Joint Stock Bank, based in Hanoi, on May 15 said in a statement to Reuters that it detected suspicious transfer requests for \$1.13 million out of its accounts - via the interbank SWIFT messaging system - in the fourth quarter of 2015 as part of a malware attack. The attempted attack did not cause any losses as the bank was quick enough to contact receiving banks and put a stop to the transfers.
         
         The State Bank of Vietnam - the country's central bank – started the investigation on the attack after having received related information from TPBank on May 16.
@@ -225,7 +226,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         TPBank's statement said the fraudulent transfer requests were made using an unnamed third-party vendor with which the bank had contracted, to allow it to interface with the SWIFT network. The bank said that in the wake of the fraudulent transfer requests, it stopped working with the third-party provider and now has a more secure system which directly interfaces with the SWIFT platform.
         
-        It was later discovered that the attack against have been carried out using a Trojanized PDF reader. The malware used to target the bank replaces Foxit's PDF reader software,  which was known to be used by the bank employees when viewing SWIFT statements, to mask records of SWIFT transactions when read. When reports are read through the PDF reader, SWIFT records are altered to remove traces of fraudulent transactions.
+        It was later discovered that the attack against have been carried out using a Trojanized PDF reader. The malware used to target the bank replaces Foxit's PDF reader software, which was known to be used by the bank employees when viewing SWIFT statements, to mask records of SWIFT transactions when read. When reports are read through the PDF reader, SWIFT records are altered to remove traces of fraudulent transactions.
         
         \begin{figure}[H]
         \centering
@@ -240,11 +241,11 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         BAE Systems stated that it did not have enough evidence to incontrovertibly attribute the hack but it said currently available evidence strongly suggested a connection to the group conducting other similar attacks.\cite{VietnameseBankBlocks}
         
-        This attack represent an interesting case due to the months of cooperation between TPB and Kaspersky Lab that uncovered more and more tools hidden deep inside the bank's infrastructure. The second relevant characteristic is the persistence of the attackers: once the contact between that bank and Kaspersky Lab was established, the attackers somehow realized that the behavior of system administrators was not normal and soon after that they started wiping all traces of their activity. However, kaspersky Lab managed to collect and build a rough timeline of some of their operations, as we can see in figure \ref{fig:lazarustimeline}. 
+        This attack represent an interesting case due to the months of cooperation between TPB and Kaspersky Lab that uncovered more and more tools hidden deep inside the bank's infrastructure. The second relevant characteristic is the persistence of the attackers: the attackers updated their tools in order to circumvent the latest security update released by Swift. Once the contact between the bank and Kaspersky Lab was established, the attackers somehow realized that the behavior of system administrators was not normal and soon after that they started wiping all traces of their activity. However, kaspersky Lab managed to collect and build a rough timeline of some of their operations, as we can see in figure \ref{fig:lazarustimeline}. 
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/lazarus-timeline.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/lazarus-timeline.png}
         \caption{Timeline of the Tien Phong Bank attack according to Kaspersky Lab.}
         \label{fig:lazarustimeline}
         \end{figure}
@@ -268,24 +269,55 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
             \item ICBKUS33XXX Industrial and Commercial Bank of China, New York branch, United States
         \end{itemize}
        
-         Other than the behaviour above-mentioned, the malware reads the SWIFT messages and checks if the sender of the message is one of the listed banks. Once it finds these messages, it reads their information and then it can manipulate these messages. This information suggest that at a certain point one of the intent of the attack would have involved these potential targets.\cite{AttacksSWIFTBanking2016}
+        Other than the above-mentioned behaviour, the malware reads the SWIFT messages and checks if the sender of the message is one of the listed banks. Once it finds these messages, it reads their information and then it can manipulate these messages. This information suggest that at a certain point one of the intent of the attack would have involved these potential targets.\cite{AttacksSWIFTBanking2016}
         
     \subsubsection{The Bank of Bangladesh, Bangladesh - February, 2016}
+        On February 4, 2016 an attacker accessed the Bangladesh Bank’s SWIFT payment system and attempted to transfer \$951m from the bank’s account to accounts in the Philippines. As of now, \$81m are still unaccounted for.
+
+        The cyber attack on the Bank of Bangladesh was one of the largest heists and most calculated and sophisticated attacks against SWIFT systems to date. Investigations found that the attack had been patiently executed over a long period of time, in fact evidence discovered by subsequent investigation has shown that the targeting of banks in Bangladesh began as early as October 7, 2014.
         
-        Systems at Bangladesh Bank were infected by "Banswift" malware that allowed attackers to inject fraudulent money-moving messages into the SWIFT network. Attackers also employed trojanized PDF reader software that prevented details of the transactions from being printed out on the bank's printer, thus delaying the bank's discovery of the fraud.
+        The FBI’s investigation, including its analysis and examination of digital devices and electronic evidence received from Bangladesh Bank, identified four key accounts used to target and infiltrate Bangladesh Bank:
+        watsonhenny@gmail.com, yardgen@gmail.com, and two accounts connected to them, rasel.aflam@gmail.com and rsaflam8808@gmail.com.
+        The spear-phishing emails from each of those four accounts were nearly identical and read as follows:
+        \begin{displayquote}
+        I am Rasel Ahlam.
         
-        The cyber attack on the Bank of Bangladesh (February 2016) was one of the largest heists and most calculated and sophisticated attacks against SWIFT systems to date. Investigations found that the attack had been patiently executed over the period of almost a full year. Attackers gained access to the bank’s internal systems and deployed trusted Windows software to monitor employee activity. Using this initial foothold, attackers were able to move laterally across the bank’s internal network in search of SWIFT-connected systems. Once access to SWIFT systems was obtained, the attackers monitored employee behaviour, stole user credentials, and deployed specifically-designed malware. The malware targeted the SWIFT Alliance Access application, bypassed its security controls, and removed evidence from printed SWIFT messages.
-        In order to grant the ability to execute database transactions, the malware targeted a specific module that was responsible for managing some of the core functions of the database.
-        A total of 35 SWIFT transactions worth \$951,000,000 were made. However, only \$81,000,000 of this was successfully exfiltrated to bank accounts in the Philippines, while the rest were blocked and recovered due to typos being identified within a number of SWIFT messages sent.
+        I am extremely excited about the idea of becoming a part of your company and am hoping that you will give me an opportunity to present my case in further detail in a personal interview.
+        
+        Here is my resume and cover letter. Resume and cover letter http://www.[DOMAIN REDACTED].com/CFDOCS/Allaire\_Support
+        /rasel/Resume.zip
+        
+        Thank you in advance for your time and consideration. 
+        \end{displayquote}
+       
+        These links may have hosted the malware that allowed the subjects to gain initial access to the computer network of Bangladesh Bank, but it is not possible to very this assertion anymore. Another piece of evidence is that stored in watsonhenny@gmail.com’s address book, by June 24, 2015, the account had thirty-seven email addresses of personnel at Bangladesh Bank saved in it.  
+        
+        On January 29, 2015, the account yardgen@gmail.com sent 10 email messages to sixteen different email addresses of employees of Bangladesh Bank. Each of those messages purportedly sought an employment opportunity using the email quoted above. On February 23, the same account sent other two email messages to ten recipients at Bangladesh Bank. 
+        
+        On August 11, 2015, the account rsaflam8808@gmail.com sent a message to another Bangladesh-based bank (not Bangladesh Bank). The content of this email was the same as the emails sent by yardgen@gmail.com to employees of Bangladesh Bank. This information highlight the broader scope of the hacking campaign. On August 11 and 12, 2015, the account rasel.aflam@gmail.com sent twenty-five spear-phishing messages to employees of multiple Bangladesh-based banks using the same email quoted. 
+        
+        After the heist of Bangladesh Bank, forensic review and analysis revealed that at least three Bangladesh Bank computers had attempted to download the file. 
+        
+        Since March 2015, the attackers had moved within the Bangladesh Bank network and had saved a file that was a backdoor that communicated over a custom binary protocol designed to look like “TLS” traffic. That malware was capable of performing file transfers, creating .zip archives, and executing certain files. This indicate that most of the later phishing emails were sent in order to ease the harvesting of credentials and to gain higher access to the systems of Bangladesh Bank. This malware is a variation of the MACKTRUCK backdoor. 
+        
+        The sophistication of this attack can be figured just by looking at how many malware were developed and used in order to gain access to the SWIFT environment. Other than the MACKTRUCK backdoor, other malware were used such as NESTEGG, Brambul and evtdiag.exe.
+        
+        Attackers also employed trojanized PDF reader and software that prevented details of the transactions from being printed out on the bank's printer, thus delaying the bank's discovery of the fraud. The software specifies the printer model, which is "HP LaserJet 400 M401". 
+        
+        On January 29, 2016, days before the fraudulent transfers were made, the attackers engaged in a number of lateral movements throughout the network, including from the computer where they had installed a file that communicated by mimicking TLS traffic. One of those moves was to Bangladesh Bank’s SWIFTLIVE system. That system was the core component of Bangladesh Bank’s SWIFT processing environment. It used the SWIFT Alliance Access application, which was a customer-managed gateway to the SWIFT network that transmitted and received messages from other banks that create and confirm financial transactions. As the application received SWIFT messages, it would record local copies of the messages, including by formatting and printing those messages to files or a printer and by entering information associated with them in a separate database.
+        
+        As the hackers tried to move onto the Bangladesh Bank computer hosting the SWIFTLIVE system, they made at least four attempts to log¬in to it. The subjects had successfully deleted some evidence of their attempts to log-in to Bangladesh Bank’s SWIFTLIVE system but left some evidence that was later found during the forensic examination. Significantly, one of those log-in attempts (that presumably was not successful) used the name of a specific currency exchange business in South America. The mentioned South American currency exchange had already been targeted by the same attackers, and thus the attempt to use credentials associated with it was likely an error by the hackers who were conducting or managing multiple intrusions at the same time and remotely accessing Bangladesh Bank’s computer systems.
+
+        Once access to SWIFT systems was obtained, the attackers monitored employee behaviour, stole user credentials, and deployed specifically-designed malware. The malware targeted the SWIFT Alliance Access application, bypassed its security controls, and removed evidence from printed SWIFT messages, as explained before. A summary of the modus operandi can be observed in figure \ref{fig:Bangladesh}.
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/Bangladesh.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/Bangladesh.png}
         \caption{Bank of Bangladesh Hack}
         \label{fig:Bangladesh}
         \end{figure}
         
-        In order to grant the ability to execute database transactions, the malware targeted a specific module that was responsible for managing some of the core functions of the database.
+        In order to grant the ability to execute database transactions, the malware targeted a specific module that was responsible for managing some of the core functions of the database. In fact, the malware enumerates all processes, and if a process has the module liboradb.dll loaded in it, it will patch its memory. The patch will essentially jump some important check, such as a key validity check or authorisation success check. A brief summary of this process is represented in figure \ref{fig:liboradb}.
         
         \begin{figure}[H]
         \centering
@@ -294,12 +326,16 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \label{fig:liboradb}
         \end{figure}
         
+        On February 4, a total of 35 SWIFT transactions worth \$951,000,000 were made to the Federal Reserve Bank of New York asking the bank to transfer the funds to bank accounts in the Philippines, Sri Lanka and other parts of Asia. 
         
-        https://www.asiapacificsecuritymagazine.com/swift-attackers-malware-linked-to-more-financial-attacks/
-        https://outline.com/ZCjsmE
-        https://en.m.wikipedia.org/wiki/Bangladesh_Bank_robbery
-        https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html
+        Thirty transactions worth \$851 million were flagged by the banking system for staff review, but five requests were granted; \$20 million to Sri Lanka and \$81 million lost to the Philippines. 
         
+        This money was laundered through casinos and some later transferred to Hong Kong. 
+        
+        The \$20 million transfer to Sri Lanka was intended by hackers to be sent to the Shalika Foundation, a Sri Lanka-based private limited company. The hackers misspelled "Foundation" in their request to transfer the funds, spelling the word as "Fundation". This spelling error gained suspicion from Deutsche Bank, a routing bank which put a halt to the transaction in question after seeking clarifications from Bangladesh Bank.
+        
+        The money transferred to the Philippines was deposited in five separate accounts with the Rizal Commercial Banking Corporation (RCBC); the accounts had all been opened a year earlier in May 2015, but had been inactive with just \$500 sitting in them until the stolen funds arrived. The funds were then transferred to a foreign exchange broker to be converted to Philippine pesos, returned to the RCBC and consolidated in an account of a Chinese-Filipino businessman. On February 8, 2016, Bangladesh Bank informed RCBC through SWIFT to stop the payment, refund the funds, and to "freeze and put the funds on hold" if the funds had already been transferred. The message was received by RCBC only a day later due to the fact that it was the Chinese New Year, a non-working holiday . By this time, a withdrawal amounting to about \$58.15 million had already been processed by RCBC's Jupiter Street (in Makati City) branch. RCBC was fined for its non-compliance with banking laws and regulations in connection with the bank robbery.\cite{TwoBytes951m}\cite{UnitedStatesAmerica}\cite{SWIFTThreatAnalysis}
+    
     \subsubsection{Unnamed Ukrainan bank - 2016}
         Details regarding the compromise of an unnamed Ukrainian bank are limited, though it was reported that \$10,000,000 was stolen and that the attack was similar to that of the Bank of Bangladesh. 
         
@@ -310,14 +346,13 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         It's not clear if the Ukrainian bank heist involved the same malware or was the work of the same hackers that attacked the Bangladesh Bank as the threat-intelligence firm iSight Partners, a FireEye division, notes that the Ukraine hack may be the work of a different cybercrime organization that used malware to steal an estimated \$25.5 million from Russian bank accounts.\cite{HackersReportedlySteal2016}
    
     \subsubsection{Polish Financial Supervision Authority (Komisja Nadzoru Finansowego) - January, 2017}
-        
         In early February 2017, the Polish Financial Supervision Authority (KNF) took its systems offline after discovering that malicious code had been placed on its webserver and was being used to redirect designated targets to malicious payloads. Subsequent public reporting indicates that multiple Polish banks have confirmed that they had identified malware on their systems. Based on further analysis, it is believed that this campaign was more widespread and was intended to primarily target financial institutions.
         
         On Feb. 3, 2017, InfoSec news blog badcyber reported that multiple Polish commercial banks were allegedly infected with malware. The initial investigation suggested that the initial infection vector occurred via the KNF website (figure \ref{fig:knf}). FireEye iSIGHT Intelligence confirmed that unauthorized code was being hosted in a JavaScript file on the KNF domain, which was being used to redirect visitors to an exploit kit landing page. 
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/knf.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/knf.png}
         \caption{http://www.knf.gov.pl}
         \label{fig:knf}
         \end{figure}
@@ -329,13 +364,14 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         There is currently no evidence of monetary loss associated with affected Polish banks. However, one media report claimed that a large amount of data was stolen from one Polish financial institution. the nature of the data that was stolen is unclear.\cite{WlamaniaKilkuBankow}\cite{badcyberSeveralPolishBanks2017}\cite{PolishBanksInfected}
     
     \subsubsection{Russian bank - 2017}
-        
         The Russian central bank reported the in 2017 unknown hackers stole 339.5 million roubles, roughly \$6 million, from a Russian bank via SWIFT system. 
         
         The hackers had taken control of a computer at a Russian bank and used the SWIFT system to transfer the money to their own accounts. 
         The spokesman of the central bank declined to name the bank or provide further details but he quoted Artem Sychev, deputy head of the central bank’s security department, as saying this was “a common scheme”. In fact, it was reported that during 2016 hackers stole 2 billion rubles from accounts that banks keep at Russia's central bank. During 2016 the attackers tried to steal 5 billion rubles, but the central banking authority managed to stop them and redirect some of the funds. The total loss amounted to 2 billion rubles.
         
-        The hackers targeted commercial banks, but they also stole cash from their clients, the central bank reported. At this time, it's unclear who has attacked Russian banks.\cite{HackersStoleMillion2018}\cite{UnknownHackersStole2018}
+        The hackers targeted commercial banks, but they also stole cash from their clients, the central bank reported. At this time, it's unclear who has attacked Russian banks.
+        
+        Also, at the end of 2017, hackers tried to steal 55 million rubles (\$940,000) from Russian state owned bank Globex using the SWIFT system. The bank spotted the attack and was able to prevent the attackers from stealing all the funds they had sought: the hackers only withdrew around \$100000.\cite{HackersStoleMillion2018}\cite{UnknownHackersStole2018}\cite{RussiaGlobexBank2017}
         
     \subsubsection{The Far Eastern International, Taiwan - October, 2017}
         In October 2017 an attack was carried out against the Far Eastern International Bank. During the heist, attackers used malware which has been linked to multiple attacks on financial institutions around the world. This malware was used to gain access to and move through the bank’s internal network in order to infiltrate SWIFT systems. Attackers then compromised employee credentials and used this information to authenticate to the SWIFT Alliance Messaging Hub and issue a total of \$60,100,000 worth of fraudulent transactions. By the time staff noticed the weird transactions, they had already been wired to banks in the US, Cambodia, and Sri Lanka. Although it was initially understood that \$500,000 was lost, the Financial Supervisory Commission reported that the final amount lost by Far Eastern Bank was \$160,000.\cite{thomsonHackersNick60m2017}
@@ -361,7 +397,6 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         
     \subsubsection{City Union Bank, India -  February, 2018}
-        
         On Sunday, February 18, the Indian bank Kumbakonam-based City Union Bank announced that cyber criminals compromised its systems and transferred a total of \$1.8 million.  
         
         The Indian bank confirmed that it has suffered a security breach launched international cyber-criminals and there is no evidence of internal staff involvement. 
@@ -372,7 +407,6 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
 
         
     \subsubsection{Banco de Chile - May, 2018}
-        
         Banco de Chile, the country's second largest bank, on May 24 lost about \$10 million due to fraudulent SWIFT wire transfers. The theft happened while the bank was dealing with hundreds of workstations and servers that suddenly stopped working.
         
         Researchers with business risk intelligence firm Flashpoint say they've analyzed the malware used for the distraction portion of the attack against Banco de Chile. It's MBR Killer, a component of Buhtrap, a malware a-la NotPetya that first struck Russian banks in 2015. Buhtrap is a portmanteau of the Russian word "buhfalter" that means accountant, and trap. MBR Killer tampers with the master boot record, the first sector of a hard drive that the computer calls on before loading the operating system. The component renders the local operating system and MBR unreadable. The source code for Buhtrap leaked in early 2016, that means any group could be using it now to cause havoc. According to a screenshot of private IM conversations posted on a Chilean forum, the alleged "virus" crashed over 9,000 computers and over 500 servers. This malware didn't bother showing a ransom note and just wiped computer's MBRs, leaving them in a non-bootable state.
@@ -393,11 +427,13 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
     \subsubsection*{Other attacks}
         
-        https://www.reuters.com/article/us-russia-cyber-globex/russias-globex-bank-says-hackers-targeted-its-swift-computers-idUSKBN1EF294 
-        https://www.bankinfosecurity.com/hackers-target-swift-using-banks-odinaff-malware-a-9451
-        https://www.pindrop.com/blog/theres-another-hacking-team-going-after-swift-banks/
-        https://www.bloomberg.com/news/articles/2018-05-29/mexico-foiled-a-110-million-bank-heist-then-kept-it-a-secret
-        https://www.wired.com/story/mexico-bank-hack/
+        In January 2018 a known group of hackers attempted to steal \$110 million from the Mexican commercial bank Bancomext. That effort failed but just a few months later, a smaller yet still elaborate series of attacks allowed hackers to siphon off 300 to 400 million pesos, or roughly \$15 to \$20 million from Mexican banks. 
+        
+        Instead of using SWIFT, the attackers exploited the insecure network architecture within the Mexican financial system and poor security oversights in SPEI, Mexico's domestic money transfer platform run by central bank Banco de México, also known as Banxico. 
+        
+        The networks of targeted banks didn't have strong access controls, so hackers could get a lot of mileage out of compromised employee credentials. The networks also weren't well segmented, meaning intruders could use that initial access to penetrate deep into banks' connections to SPEI and, eventually, SPEI's transaction servers. 
+        
+        The hackers also exploited flaws in how SPEI validated sender accounts to initiate a money transfer from a nonexistant source. They would then direct the phantom funds to a real, but pseudonymous account under their control and send a mule to withdraw the money before the bank realized what had happened. Each malicious transaction was relatively small, in the range of tens or hundreds of thousands of pesos. Attackers would have potentially needed to work with hundreds of mules to make all of those withdrawals possible over time.\cite{HowHackersPulled}
     
     \subsection{The attackers - APT38 a.k.a. Lazarus Group}
         
@@ -405,11 +441,25 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \centering
         \includegraphics[width=0.20\textwidth]{figures/apt38.png}
         \end{wrapfigure}
-        North Korean group definitions are known to have significant overlap, and the name Lazarus Group is known to encompass a broad range of activity. Some organizations use the name Lazarus Group to refer to any activity attributed to North Korea. Some organizations track North Korean clusters or groups such as Bluenoroff, APT37, and APT38 separately, while other organizations may track some activity associated with those group names by the name Lazarus Group.
+        North Korean group definitions are known to have significant overlap, and the name Lazarus Group is known to encompass a broad range of activity. Lazarus activities have been retroactively tracked back to 2007, under various names. For years, these activities were seen as acts of cyberterrorism and vandalism, since most of them systematically involved destruction of data and/or distributed denial of service attacks. The Lazarus group was clearly identified and named in the 2016 Novetta report “Operation Blockbuster”. This report uncovered and attributed a large set of malware based on the analysis of the Sony Pictures Entertainment targeted attack. Attribution and tracking was made possible due to the group’s habits of reusing huge chunks of code in most of their malware. This report showcased how active and diverse the group is: using more than 45 different home-developed malware families, Lazarus has been conducting destructive attacks but also advanced and persistent spying campaigns all over the world, making it worthy of the APT designation. TTP, arsenal and targets reveal that Lazarus is composed of at least three different subgroups: the Lazarus “core”, aiming at disrupting activities and causing damage, Andariel, hacking for profit and intelligence, and Bluenoroff, motivated by financial gains. Uncovering its malware and activities didn’t stop the Lazarus group from continuing its operations or renewing its arsenal. 
+        
+        APT38 targets financial companies mostly in Asia. Its first known operation took place in 2014 according to FireEye. This report doesn’t clearly draw a link between APT38 and Lazarus subgroup Bluenoroff, which comes from the fact that FireEye classify APT groups following its own strict rules and criteria. To remove any confusion, APT38 can be considered to be Bluenoroff, based on malware code overlaps and TTPs. 
+        
+        APT38 TTP (figure \ref{fig:lazarus38}) resemble those of Lazarus subgroups, especially how they carry out their attacks and chose their targets. They have been focusing on attacking banks connected to the SWIFT network. They will most of the time infiltrate a bank network through vulnerable exposed servers, spend months gathering information, doing reconnaissance and moving laterally in the network until they find a way to steal money. Once the theft is complete, they will try to destroy all evidence.
+        APT38 has its own toolset to maintain persistence, move laterally and manipulate SWIFT transactions. As mentioned in this report, their targets are diverse and worldwide. This group has also shown some amateurism and carelessness despite being quite sophisticated, which is a common trait amongst North Korean APT groups.
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{figures/TESTSwiftHacks.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/lazarus-tpp.png}
+        \caption{APT38/Bluenoroff tactics, techniques an procedures}
+        \label{fig:lazarus38}
+        \end{figure}
+
+        
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/TESTSwiftHacks.png}
         \caption{Swift Hacks}
         \label{fig:SwiftHacks}
         \end{figure}
@@ -425,8 +475,6 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180244/Lazarus_Under_The_Hood_PDF_final.pdf
         
         https://www.fireeye.com/blog/threat-research/2018/10/apt38-details-on-new-north-korean-regime-backed-threat-group.html
-        
-        https://baesystemsai.blogspot.com/2016/04/two-bytes-to-951m.html
         
         https://github.com/mungurk/apt_38
         
