@@ -455,7 +455,8 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \label{fig:lazarus38}
         \end{figure}
 
-        
+        North Korea has been targeted by multiple rounds of financial sanctions and restrictions. In 2017, the UN and the United States issued many resolutions and orders that had heavy negative impact on North Korea exchanges. 
+        To compensate, we have seen the Lazarus group focus on hacking financial institutions all around the world to steal money (figure \ref{fig:SwiftHacks}). Even though disruptive attacks keep being conducted, it is clear that Lazarus prefer heists involving big sums of money. Likewise, spying operations are still being conducted by APT37. 
         
         \begin{figure}[H]
         \centering
@@ -463,53 +464,233 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \caption{Swift Hacks}
         \label{fig:SwiftHacks}
         \end{figure}
+         
+        Most bank attacks are carried out by the Bluenoroff subgroup, while ATM attacks are usually attributed to Andariel. However, Lazarus members have recently been focusing on hacking cryptocurrency businesses, with a particular emphasis on South Korean exchanges. These attacks are very profitable and most of the time quite unsophisticated, making them the perfect way for stealing money rather than hacking banks and ATMs. 
         
-        https://github.com/mungurk/apt_38/blob/master/HP%20-%20Profiling%20an%20enigma%20-%20Mystery%20of%20North%20Korea's%20Threat%20Landscape.pdf
+        It's important to remember that much of the intelligence available on North Korea is dated and may not accurately reflect the regime’s current capabilities. Moreover much of the intelligence available on North Korea comes from U.S. or South Korean military or agency reports. These reports omit details that are likely classified, such as specific IP addresses and individual actor information and, especially for South Korea, they may contain biased information. Obtaining details on North Korea’s cyber warfare capabilities is not an easy task. It is easy to understand why by examining the few known cyber capabilities of North Korea’s regime and how the country maintains secrecy in these matters. 
         
-        https://www.youtube.com/watch?v=9Vh2n6nC0t4&feature=emb_title
+        The Democratic People’s Republic of Korea (DPRK), known in the West as North Korea, is a unique country with a military-focused society and an unconventional technology infrastructure. Due to North Korea’s global interactions, its cyber warfare capabilities are of particular interest. According to a 2009 report by Major Steve Sin, an intelligence analyst, North Korean hackers have successfully penetrated U.S. defense networks more frequently than any other country that has targeted U.S. defense assets. In order for Westerners to understand the North Korean mindset, it is necessary to examine the key components of North Korean political and ideological thought. North Korea has two primary ideologies that provide context for the regime’s motivations and activities: juche (ju-cheh) and songun (sun-goon). Juche is the official political ideology of North Korea. It was instituted in 1972 and is based on the ideologies of Kim Il-Sung, the founder of the DPRK. Juche emphasizes self-reliance, mastering revolution and reconstruction in one’s own country, being independent of others, displaying one’s strengths, defending oneself, and taking responsibility for solving one’s own problems. North Korea’s air-gapped intranet exemplifies this philosophy in the country’s cyber infrastructure. The juche philosophy explains North Korea’s disdain for outside cultural and political influence. Juche challenges North Koreans to contribute to the regime’s chaju (ja-ju), a concept of national sovereignty and independence. Songun is North Korea’s “military first” doctrine. Songun emphasizes the priority of the military in resource allocation and political and economic affairs. This doctrine stems from the belief that the military is vital for preservation of chaju. Understanding songun mindset gives context for this potential threat actor’s motivations. According to a 2013 Congressional report, the strategy established under former leader Kim Jong-Il focused on “internal security, coercive diplomacy to compel acceptance of its diplomatic, economic and security interests and development of strategic military capabilities to deter external attack". 
+        In recent years, one primary factor has heavily influenced the current state of North Korea’s relations with other nations: the rise of the regime’s leader Kim Jong Un. Kim Jong Un officially rose to power in April 2012, following the death of his father Kim Jong Il in December 2011. Following his rise to power, the regime reportedly expanded its labor camps, and more military resources were allocated to target those attempting to defect. Kim also executed his own uncle, a high-ranking official who did not share his ideals. 
         
-        https://blog.lexfo.fr/ressources/Lexfo-WhitePaper-The_Lazarus_Constellation.pdf
+        When it come to North Korean cyber capabilities and limitations there is an important point to highlight about the North Korean infrastructure. North Korea’s cyber infrastructure is divided into two major parts: an outward-facing Internet connection and a regime-controlled intranet. North Korea’s outward-facing Internet connection is only available to select individuals and is closely monitored for any activity that is deemed anti-regime. Individuals using the outward-facing Internet connection must be authorized. Common citizens are limited to using the Kwangmyong (gwang me-young), a nationwide intranet with no access to the world outside North Korea. Also, Koryolink, the country’s only cellular phone network, is tightly controlled by the regime and cell phone data plans are not available to most users. Email is also regulated by the regime. The Korea Computer Center (KCC), North Korea’s leading government research center for information technology, has a vested interest in Linux research and is responsible for the development of North Korea’s national operating system, Red Star OS. The OS’s design suggests it was developed with means for the regime to monitor user activity. 
         
-        https://www.kaspersky.com/about/press-releases/2017_chasing-lazarus-a-hunt-for-the-infamous-hackers-to-prevent-large-bank-robberies
+        According to Alexa rankings, the three most visited websites in North Korea are kcna.kp, the official website of the Korean Central News Agency (KCNA); rodong.rep.kp, another North Korean news site; and naenara.com.kp, North Korea’s official web portal. Naenara translates to “my country”. In March 2013, there were reports that the Chrome browser was blocking Naenara.com.kp due to malware.
         
-        https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07180244/Lazarus_Under_The_Hood_PDF_final.pdf
+        In order to manage such effort to monitor its citizens, North Korean cyber war and intelligence structure has develop a particular structure that can be observed in figure \ref{fig:structure}
         
-        https://www.fireeye.com/blog/threat-research/2018/10/apt38-details-on-new-north-korean-regime-backed-threat-group.html
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/struttura.png}
+        \caption{Swift Hacks}
+        \label{fig:structure}
+        \end{figure}
         
-        https://github.com/mungurk/apt_38
+        North Korea’s air-gapped networks and prioritization of resources for military use provide both a secure and structured base of operations for cyber operations and a secure means of communications. North Korea’s hermit infrastructure creates a cyber-terrain that deters reconnaissance. Because North Korea has few Internet connections to the outside world, anyone seeking intelligence on North Korea’s networks has to expend more resources for cyber reconnaissance. According to Kim Heung-kwang, a North Korean defector and former computer science professor, the regime has the following motivations for expanding its cyber warfare capabilities:
+        \begin{itemize}
+        \item Cyber capabilities are a cost-effective way to offset North Korea’s lack of kinetic military prowess.
+        \item North Korea’s school systems place a strong emphasis on math, giving the nation confidence in its programmers, cryptographers, and security researchers.
+        \item In the modern warfare landscape, cyber capabilities are potentially more utilitarian than heavy artillery or aircraft.
+        \item Cyber warfare capabilities provide a platform for espionage, psychological operations, and other forms of non-kinetic warfare.
+        \item Considering the separatist nature of North Korea’s infrastructure, cyber warfare provides a strategic advantage since outbound attacks are possible, but inbound attacks would have limited reach.
+        \item Cyber warfare allows North Korea to leverage the Internet’s inherent flaws for offensive purposes while maintaining its defenses, primarily via air-gapping its most critical networks from the outside world.
+        \end{itemize}
         
-        https://www.blackhat.com/docs/eu-17/materials/eu-17-Shen-Nation-State%20Moneymules-Hunting-Season-APT-Attacks-Targeting-Financial-Institutions.pdf
+        North Korea’s attack and defense capabilities reportedly include the following cyber warfare and electronic warfare components: offensive cyber operations (OCO); computer network operations (CNO), which includes both computer network attack (CNA) and computer network exploitation (CNE); distributed denial of service (DDoS); satellite monitoring; drones; GPS jamming capabilities and deployment of electromagnetic pulse (EMP).
         
-        https://baesystemsai.blogspot.com/2016/05/cyber-heist-attribution.html
+        The basis of this capabilities is the early training and indoctrination. North Korea utilizes primary and secondary education and the university system to train its cyber warfare operators. According to reports by defectors, the regime seeks out children who show mathematical talent and sends them through rigorous advanced training. Science and technology students are expected to learn foreign languages, which may include Chinese, Japanese, and English. Student emails, chats, and web browsing activities are heavily monitored. Around age twelve or thirteen, chosen students are enrolled in accelerated computer courses at First and Second Geumseong Senior-Middle Schools. The successful students are then sent to Kim Il-sung University, Kim Chaek University of Technology, or the Command Automation University, traditionally known as Mirim University. The Command Automation University periodically chooses around 100 students for an intensive five-year course prior to their assignment to serve in cyber intelligence and cyber warfare capacities. Programs at the Command Automation University include command automation, computers, programming, automated reconnaissance, and electronic warfare. Other students attend a two-year accelerated university program, then study abroad in Russia or China before they are assigned to a cyber-operator role. The elite cyber operators are given special incentives. For example, parents of students graduating from the cyber program with top scores are given the opportunity to live in Pyongyang; married cyber operators are given housing, a food allowance, and a stipend if operating overseas.
+        
+        Other than executiong cyber attacks, North Korea may strategically take credit for cyber attacks that were, in reality, launched by another entity. Whether the targeted entity blames North Korea for the attacks, or the regime simply takes credit for an attack that has not yet been attributed, several goals can come into play. First, to claim credit for an attack amplifies the impact of a show of force, particularly if South Korea is the target. This tactic can be used to stir sentiments in order to provoke a reaction. Second, North Korea may lay claim to responsibility for an attack that exceeds its capabilities in order to seem more technologically advanced and more capable. Third, any success, or the appearance thereof, enforces the juche ideal of regime self-sufficiency.\cite{LazarusConstellation}\cite{ProfilingEnigmaMystery}
+        
+ 
         
 \section{The consequences}
         
-        As a countermeasure to the current cyber-threat landscape, SWIFT has implemented the Customer Security Programme (CSP). This programme requires all SWIFT customers to implement a number of controls defined by SWIFT’s Customer Security Controls Framework (CSCF), to which customers must self-attest compliance before 1 January 2018. This framework outlines a collection of security controls to ensure a minimal baseline for security is in place across all customers’ local SWIFT deployments.
+        \subsection{The aftermath}
+        Since the disclosure of the first hacks, SWIFT has urged banks to protect themselves against the possibility of persistent, adaptive and sophisticated attacks. However, the long series of banks damaged by the attackers suggest that the warning was not taken seriously enough or that there was an insufficient effort from banks in securing their systems. 
         
-        https://www.justice.gov/opa/press-release/file/1092091/download
-        https://en.wikipedia.org/wiki/2015%E2%80%932016_SWIFT_banking_hack
-        https://thefinancialexpress.com.bd/trade/reserves-heist-swift-turns-to-govt-seeks-unfettered-staff-travel-1580101565
-        https://www.bankinfosecurity.com/security-investments-consume-swifts-profits-a-9988
+        Consequently, SWIFT has taken extra measures to secure client banks, including sharing more information, supporting security audits and introducing tougher requirements for local bank computer networks. It is important to remember that none of the attacks succeeded in compromising the SWIFT network and its core messaging services so the effects on the SWIFT network are limited to the reputational damage and loss of trust in the network.
+
+        From the point of view of the consumer there is relatively little to lose from cyberattacks on banks. Most legislations requires banks to refund customers if someone takes money from their account without authorization. Banks themselves instead have fewer assurances if a major cyberattack were executed. According to some experts these attacks could target bank processing systems and disrupt critical financial transactions needed to avoid margin calls, for example, triggering a default. Also, a cyberattack usually lead to a loss of confidence on that bank. 
+        
+        After the attacks SWIFT acted to limit the backlash. For instance, SWIFT said it had signed an agreement with Bangladesh’s central bank to help it rebuild its infrastructure. SWIFT also agreed to provide technical assistance to Bangladesh Bank in its lawsuit against third parties involved in the heist. The firm stated it would continue to lend its support to international efforts to protect the global financial system from cyber attacks. 
+        
+        As for profits, the banks that collectively own SWIFT saw their profits fell by 31\% as the organization increased its investments in information security.\cite{SecurityInvestmentsConsume}
+        
+         \cite{}\cite{}\cite{}
+
+        \subsection{The investigation}
+        
+        Links to North Korean Military Units
+        Based on details published in the DOJ complaint against North Korean programmer Park Jin Hyok, we know that APT38 and other cyber operators linked to TEMP.Hermit are associated with Lab 110, an organization subordinate to or synonymous with the 6th Technical Bureau in North Korea's Reconnaissance General Bureau (RGB). The organization is believed to leverage front organizations to mask their activities, including infiltrating networks and gathering intelligence. These relationships are outlined in Figure 3.
+        
+         \cite{}\cite{}\cite{}
+         
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/TESTpark-jin-hyok.png}
+        \caption{Park Jin Hyok most wanted poster}
+        \label{fig:structure}
+        \end{figure}
+       
+        \subsection{Customer Security Programme and Information Sharing and Analysis Centre}
+        
+        As a reaction to the cyber-threat landscape, SWIFT has implemented the Customer Security Programme (CSP). This programme requires all SWIFT customers to implement a number of controls defined by SWIFT’s Customer Security Controls Framework (CSCF), to which customers must self-attest compliance. This framework outlines a collection of security controls to ensure a minimal baseline for security is in place across all customers’ local SWIFT deployments.
+        
+        Even if SWIFT customers are individually responsible for the security of their own environments, the security of the industry as a whole is a shared responsibility according to SWIFT. As a consequence SWIFT is committed to playing an important role in reinforcing and safeguarding the security of the ecosystem. From SWIFT point of view, this action represent one of the only option in order to safeguard the trust in the network. 
+        
+        The CSP is articulated around three mutually reinforcing areas. Customers will first need to protect and secure their local environment in order to safeguard themselves, it is then about preventing and detecting fraud in commercial relationships in order to safeguard network members and continuously sharing information and preparing to defend against future cyber threats.
+        
+        The SWIFT Customer Security Controls Framework describes a set of mandatory and advisory security controls for SWIFT customers. The mandatory security controls establish a security baseline and must be implemented by all users on their local SWIFT infrastructure. SWIFT has chosen to prioritise these mandatory controls to set a realistic goal for near-term, tangible security gain and risk reduction. 
+        All controls are articulated around three overarching objectives: 'Secure your Environment', 'Know and Limit Access', and 'Detect and Respond'. The controls have been developed based on SWIFT's analysis of cyber threat intelligence and in conjunction with industry experts and user feedback. The control definitions are also intended to be in line with existing information security industry standards.
+        
+        However, it is not possible to evaluate the effectiveness of this program because the document detailing the security requirement to implement - the "SWIFT Customer Security Controls Framework Detailed Description" - is not publicly available. 
+        
+        Fortunately, I was able to avail myself of a copy of the aforementioned document.
+        
+        Before diving into the security requirements it is important to observe the timeline of the implementation of such requirements. As we can see in figure \ref{fig:swiftcsp}, SWIFT adopted a change management process to evolve the controls framework. The process is designed to ensure that the SWIFT community has sufficient time (up to 18 months) to understand and implement the changes to the controls requirements. An emergency release may still be required in rare occurrences, to allow for the fix of critical and urgen issues. 
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/swift_csp.png}
+        \caption{SWIFT CSP Security controls implementation timeline}
+        \label{fig:swiftcsp}
+        \end{figure}
+        
+        The controls outlined in the CSP document represent general product-agnostic controls. Moreover, they should not be considered exhaustive or all-inclusive, and they do not aim at replacing a security and risk framework or compliance with the latest best practices and regulations. The controls are based upon three overarching framework objectives, supported by eight security principles. Objectives are the highest level structure for security within the user's local environment. The associated principles elaborate on the highest priority focus areas within each objective. The objectives and corresponding principles can be observed in figure \ref{fig:swiftcspsection}.
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/SWIFT_CUSTOMER_FRAMEWORK.jpg}
+        \caption{SWIFT CSP Framework Objectives and Principles}
+        \label{fig:swiftcspsection}
+        \end{figure}
+       
+        The 31 security controls (21 mandatory and 10 advisory controls as of 2020) are intended to help mitigate specific cybersecurity risks that SWIFT users face due to the cyber threat landscape. Within each security control, SWIFT has documented the most common risk drivers that the control is designed to help mitigate. While not yet mandatory, SWIFT encourages users to consider cyber risk management in the broadest possible terms, including beyond the scope of the user's SWIFT infrastructure and the SWIFT security controls. Organizations should incorporate SWIFT's controls into an ongoing cybersecurity governance and risk programme.
+        
+        SWIFT has also published a guiding document to assist financial institutions in assessing their counterparty cybersecurity risk and incorporating this into their risk management framework. the document can be briefly summarized with the scheme presented in figure \ref{fig:frisk}.
+        
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/frisk.png}
+        \caption{SWIFT CSP Framework Objectives and Principles}
+        \label{fig:frisk}
+        \end{figure}
+        
+        The security controls apply to the components defined by the scope previously highlighted in figure \ref{fig:Swift}. The mandatory security controls are:
+        \begin{enumerate}
+        \item Restrict Internet Access and Protect Critical Systems from General IT Environment
+            \begin{enumerate}
+                \item SWIFT Environment Protection
+                \item Operating System Privileged Account Control
+                \item Virtualisation Platform Protection
+                \item Restriction of Internet Access
+            \end{enumerate}
+        \item Reduce Attack Surface and Vulnerabilities
+            \begin{enumerate}
+                \item Internal Data Flow Security
+                \item Security Updates
+                \item System Hardening
+                \item Back Office Data Flow Security
+                \item External Transmission Data Protection
+                \item Operator Session Confidentiality and Integrity
+                \item Vulnerability Scanning
+                \item Critical Activity Outsourcing
+                \item Transaction Business Controls
+                \item Application Hardening
+                \item RMA Business Controls
+            \end{enumerate}
+        \item Physically Secure the Environment
+            \begin{enumerate}
+                \item Physical Security
+            \end{enumerate}
+        \item Prevent Compromise of Credentials
+            \begin{enumerate}
+                \item Password Policy
+                \item Multi-factor Authentication
+            \end{enumerate}
+        \item Manage Identities and Segregate Privileges
+            \begin{enumerate}
+                \item Logical Access Control
+                \item Token Management
+                \item Personnel Vetting Process
+                \item Physical and Logical Password Storage
+            \end{enumerate}
+        \item Detect Anomalous Activity to Systems or Transaction Records
+            \begin{enumerate}
+                \item Malware Protection
+                \item Software Integrity
+                \item Database Integrity
+                \item Logging and Monitoring
+            \end{enumerate}
+        \item Plan for Incident Response and Information Sharing
+            \begin{enumerate}
+                \item Cyber Incident Response Planning
+                \item Security Training and Awareness
+                \item Penetration Testing
+                \item Scenario Risk Assessment
+            \end{enumerate}
+        \end{enumerate}
+
+        Every security control state the security goal to be achieved, the involved components, the risk drivers and implementation guidance. While going through the details of every control would be an interesting exercise it would also be pointless and a relative waste of time. In fact, anyone familiar with the NIST Cybersecurity Framework or the standard ISO 27002 would find the details of the controls very familiar. So familiar that SWIFT provide a table that maps the security controls against other security standard frameworks such as NIST, ISO 27002 ISO/IEC 27002 and the Payment Card Industry Data Security Standard (PCI DSS). Even if meeting the requirements from these industry standards does not automatically imply full compliance with the SWIFT security control the framework end up providing little or no added value.
+        
+        For instance, we can observe in figure \ref{fig:maptable} how the first security control mentioned in the framework correspond to other framework's requirements. 
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/mapframe.png}
+        \caption{ Extract of the mapping between SWIFT security controls and other industry standard}
+        \label{fig:maptable}
+        \end{figure}
+        
+        The second reaction after the cyber heist was the creation of the SWIFT Information Sharing and Analysis Centre (ISAC). The SWIFT ISAC portal stores all the information SWIFT had already been sharing with the SWIFT community through its portal called Knowledge Base on swift.com. This information includes malware details such as file hashes and YARA rules, Indicators of Compromise, as well as details on the Modus Operandi used by cyber-criminals. The SWIFT ISAC portal SWIFT aims to facilitate the community’s access to actionable cyber-security threat intelligence, enabling the community to better defend itself against potential future cyber-attacks. However it's unclear if the ISAC portal represent only a rebranding of a previous portal or an active effort in intelligence gathering.\cite{SWIFTLaunchesSWIFT2017}
+      
         
 \section{The solutions}
         
-        As a countermeasure to the current cyber-threat landscape, SWIFT introduced the Customer Security Program (CSP) to support SWIFT customers in securing their local SWIFT infrastructure. This program requires that all customers implement a set of mandatory and advisory security controls outlined within SWIFT’s Customer Security Controls Framework (CSCF).
+        \subsection{CSP partial solution and complementary solutions}
+        The first solution implemented by SWIFT was the aforementioned CSP. Other than being redundant with other standards and regulations the proposed control should not be considered exhaustive or all-inclusive according to own SWIFT statements. 
+        Therefore general attack methodologies can still be applied to the system as illustrated in figure \ref{fig:before} and \ref{fig:after}. SWIFT systems are, and will remain, high-profile targets for all threat actors operating with financial motivations. Regardless of the implementation of standard or advanced security controls, there is still a high risk that these systems will have flaws that will be identified, targeted, and exploited by persistent threat actors. This is a consequence of the complex nature of the infrastructure deployed within financial institutions.
         
-        These controls have been identified by SWIFT based on cyber-threat intelligence and in collaboration with industry experts, and are articulated around three main objectives:
-        1. Secure Your Environment 
-        2. Know and Limit Access 
-        3. Detect and Respond
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/before.png}
+        \caption{Attack Vectors due to weak security}
+        \label{fig:before}
+        \end{figure}
         
-        https://www.bankinfosecurity.asia/swift-hack-lessons-for-india-a-9095
+        \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/after.png}
+        \caption{Attack Vector after implementing SWIFT CSP}
+        \label{fig:after}
+        \end{figure}
         
+        SWIFT CSP compliance will ensure that the local SWIFT systems are hardened and isolated within a “Secure Zone”. However, there will remain a number of upstream systems within financial institutions that can be used to action payments through SWIFT, which do not reside within the scope of SWIFT CSP’s “Secure Zone”. As such, financial institutions must predict, prevent, detect and respond. Ultimately, because SWIFT’s CSP is a compliance challenge, which by nature is a rigid, linear process and because compliance does not ensure or imply security, as security itself is a fluid, cyclical process, the only viable solution is to builds on top of SWIFT CSP compliance to further strengthen the security posture of an institution as a whole. This methodology is rooted in establishing a strong understanding of how modern threat actors target financial institutions, mapping this understanding to the organization, and selecting appropriate preventative, detective and responsive measures. A ‘point in time’ approach to security will never succeed against an adaptive and persistent threat. The cyber-threat landscape is always shifting, and so only by turning the proposed methodology into a recurring practice can financial institutions and other organizations hope to secure themselves against future threats.\cite{SWIFTThreatAnalysis}
+        
+        \subsubsection{Predict}
+        It is key that financial institutions begin by understanding and mapping out the possible attack paths an attacker could take when attempting to compromise their enterprise network and local SWIFT infrastructure. This process begins at the SWIFT systems and works backwards towards the enterprise network perimeter in order to identify which systems communicate with the SWIFT infrastructure and the administration procedures surrounding these systems.
+        Furthermore, all systems and applications deployed within the institution must be subject to frequent security assessment and penetration tests. A number of attempted (and successful) attacks on financial systems are never publicly reported, and as such organizations are advised to build trusted relationships with other local and international financial organizations to share information on tactics and tooling.
 
-\begin{flushright}
-\begin{tikzpicture}
-    \node[inner sep=0] (image) at (0,0) {\includegraphics[width=0.26\textwidth]{figures/firmaMinello.png}};
-    \node[below=2cm of image] {Giacomo Minello};
- \end{tikzpicture}
- \end{flushright}
-% print biblio with heading in the index
-\newpage
-\printbibliography[heading=bibintoc]
+        \subsubsection{Prevent}
+        Once these attack paths have been identified, an analysis of the steps an attacker would need to take to complete these paths should be ascertained. The controls surrounding each of these steps should then be assessed to confidently determine whether or not they would prevent such actions. This process should include security assessments of all controls along the path, as well as establishing an understanding of the legitimate use cases for all components. Financial institutions should also establish a strong understanding of which permissions and actions privileged users have access to, and how an attacker could subvert or abuse these privileges. If these actions are necessary and cannot be prevented, monitoring and detection of malicious behaviour should be implemented. A strong focus should also be placed on establishing controls that prevent malware execution. Furthermore, these controls should be redundant in the event one fails or is bypassed.
+        
+        \subsubsection{Detect}
+        Recovery from these types of cyber heists is highly dependent on a timely response, facilitated by an efficient attack detection strategy. Discovering that a compromise has occurred when reading an end-of-day report is of little use. It is crucial that financial institutions implement robust logging of all key servers within the environment and maintain visibility of servers and endpoint devices through endpoint detection and response (EDR) technologies.
+        MWR further recommends that institutions adopt a threat hunting approach to detection and ensure that threat hunters are familiar with payment systems, as well as all known attacks against SWIFT systems. This should include prioritisation of the endpoints (including jump hosts) that are used by privileged users as these are the endpoints that are likely to be targeted by advanced threat actors during an attack.
+        
+        \subsubsection{Respond}
+        When prevention fails, it is these detection and response capabilities that will ultimately determine the overall financial impact of an institution’s local SWIFT infrastructure being compromised. Therefore, it is important that resources be placed in establishing a mature detection and response strategy surrounding your SWIFT deployment and its upstream systems. The main goal of this is to efficiently contain and recover from an attack.
+        Regular incident response exercises should be conducted by financial institutions to ensure that the policies and procedures in place facilitate rapid response to an incident. This should include table-top exercises to test these procedures, as well as full incident response run-throughs based on SWIFT systems. Attack case studies such as the heist of the Bank of Bangladesh should be mapped to the organization’s systems and the response team should work through this to establish if an investigation could have been rapidly conducted on their systems in the event of a similar attack.
+        
+        \subsection{}  
+        -deterrent to attack
+
+    \begin{flushright}
+        \begin{tikzpicture}
+        \node[inner sep=0] (image) at (0,0) {\includegraphics[width=0.26\textwidth]{figures/firmaMinello.png}};
+        \node[below=2cm of image] {Giacomo Minello};
+        \end{tikzpicture}
+    \end{flushright}
+    % print biblio with heading in the index
+    \newpage
+    \printbibliography[heading=bibintoc]
 \end{document}
