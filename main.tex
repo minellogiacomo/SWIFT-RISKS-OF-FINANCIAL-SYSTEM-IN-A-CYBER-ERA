@@ -58,7 +58,7 @@ sorting=none
 
 
 \title{SWIFT: \\
-RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
+RISKS OF FINANCIAL SYSTEM IN A CYBER ERA\\
 \textcolor{red}{\rule[0.1cm]{13cm}{0.1mm}}
 \rule[0.5cm]{13.5cm}{0.6mm}}
 \author{Giacomo Minello}
@@ -163,7 +163,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
             \item Messaging Interface - a software product (e.g. Alliance Access) supporting the use of SWIFT’s messaging services. This is typically connected directly to the Communication Interface.
             \item Communication Interface - a software product (e.g. Alliance Gateway) that provides a link between the SWIFT network (SWIFTNet) and the Messaging Interface software.
             \item  SWIFTNet Link (SNL) - a mandatory software product for access to messaging services over a secure IP network (within the above diagram the SNL is part of the Communication Interface).
-            \item HSM & PKI - the SWIFT Hardware Security Module and Public Key Infrastructure.
+            \item HSM \& PKI - the SWIFT Hardware Security Module and Public Key Infrastructure.
             \item  RMA - the Relationship Management Application (RMA) is a SWIFT-mandated filter that enables customers to define which counterparties are permitted to send FIN messages to the institution.
             \item Operators -  individual end users and administrators who directly interact with the local SWIFT infrastructure trough computer devices used to operate or maintain the local SWIFT infrastructure.
         \end{itemize}
@@ -306,7 +306,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         On January 29, 2016, days before the fraudulent transfers were made, the attackers engaged in a number of lateral movements throughout the network, including from the computer where they had installed a file that communicated by mimicking TLS traffic. One of those moves was to Bangladesh Bank’s SWIFTLIVE system. That system was the core component of Bangladesh Bank’s SWIFT processing environment. It used the SWIFT Alliance Access application, which was a customer-managed gateway to the SWIFT network that transmitted and received messages from other banks that create and confirm financial transactions. As the application received SWIFT messages, it would record local copies of the messages, including by formatting and printing those messages to files or a printer and by entering information associated with them in a separate database.
         
-        As the hackers tried to move onto the Bangladesh Bank computer hosting the SWIFTLIVE system, they made at least four attempts to log¬in to it. The subjects had successfully deleted some evidence of their attempts to log-in to Bangladesh Bank’s SWIFTLIVE system but left some evidence that was later found during the forensic examination. Significantly, one of those log-in attempts (that presumably was not successful) used the name of a specific currency exchange business in South America. The mentioned South American currency exchange had already been targeted by the same attackers, and thus the attempt to use credentials associated with it was likely an error by the hackers who were conducting or managing multiple intrusions at the same time and remotely accessing Bangladesh Bank’s computer systems.
+        As the hackers tried to move onto the Bangladesh Bank computer hosting the SWIFTLIVE system, they made at least four attempts to login to it. The subjects had successfully deleted some evidence of their attempts to log-in to Bangladesh Bank’s SWIFTLIVE system but left some evidence that was later found during the forensic examination. Significantly, one of those log-in attempts (that presumably was not successful) used the name of a specific currency exchange business in South America. The mentioned South American currency exchange had already been targeted by the same attackers, and thus the attempt to use credentials associated with it was likely an error by the hackers who were conducting or managing multiple intrusions at the same time and remotely accessing Bangladesh Bank’s computer systems.
 
         Once access to SWIFT systems was obtained, the attackers monitored employee behaviour, stole user credentials, and deployed specifically-designed malware. The malware targeted the SWIFT Alliance Access application, bypassed its security controls, and removed evidence from printed SWIFT messages, as explained before. A summary of the modus operandi can be observed in figure \ref{fig:Bangladesh}.
         
@@ -427,7 +427,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
     \subsubsection*{Other attacks}
         
-        In January 2018 a known group of hackers attempted to steal \$110 million from the Mexican commercial bank Bancomext. That effort failed but just a few months later, a smaller yet still elaborate series of attacks allowed hackers to siphon off 300 to 400 million pesos, or roughly \$15 to \$20 million from Mexican banks. 
+        In January 2018 a known group of hackers attempted to steal \$110 million from the Mexican commercial bank Bancomext. That effort failed but just a few months later, a smaller yet still elaborate series of attacks allowed hackers to siphon off 300 to 400 million pesos, or roughly \$15 to \$20 million from Mexican banks.
         
         Instead of using SWIFT, the attackers exploited the insecure network architecture within the Mexican financial system and poor security oversights in SPEI, Mexico's domestic money transfer platform run by central bank Banco de México, also known as Banxico. 
         
@@ -460,7 +460,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/TESTSwiftHacks.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/SwiftHacks.png}
         \caption{Swift Hacks}
         \label{fig:SwiftHacks}
         \end{figure}
@@ -481,7 +481,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/struttura.png}
-        \caption{Swift Hacks}
+        \caption{North Korean intelligence structure}
         \label{fig:structure}
         \end{figure}
         
@@ -499,7 +499,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         The basis of this capabilities is the early training and indoctrination. North Korea utilizes primary and secondary education and the university system to train its cyber warfare operators. According to reports by defectors, the regime seeks out children who show mathematical talent and sends them through rigorous advanced training. Science and technology students are expected to learn foreign languages, which may include Chinese, Japanese, and English. Student emails, chats, and web browsing activities are heavily monitored. Around age twelve or thirteen, chosen students are enrolled in accelerated computer courses at First and Second Geumseong Senior-Middle Schools. The successful students are then sent to Kim Il-sung University, Kim Chaek University of Technology, or the Command Automation University, traditionally known as Mirim University. The Command Automation University periodically chooses around 100 students for an intensive five-year course prior to their assignment to serve in cyber intelligence and cyber warfare capacities. Programs at the Command Automation University include command automation, computers, programming, automated reconnaissance, and electronic warfare. Other students attend a two-year accelerated university program, then study abroad in Russia or China before they are assigned to a cyber-operator role. The elite cyber operators are given special incentives. For example, parents of students graduating from the cyber program with top scores are given the opportunity to live in Pyongyang; married cyber operators are given housing, a food allowance, and a stipend if operating overseas.
         
-        Other than executiong cyber attacks, North Korea may strategically take credit for cyber attacks that were, in reality, launched by another entity. Whether the targeted entity blames North Korea for the attacks, or the regime simply takes credit for an attack that has not yet been attributed, several goals can come into play. First, to claim credit for an attack amplifies the impact of a show of force, particularly if South Korea is the target. This tactic can be used to stir sentiments in order to provoke a reaction. Second, North Korea may lay claim to responsibility for an attack that exceeds its capabilities in order to seem more technologically advanced and more capable. Third, any success, or the appearance thereof, enforces the juche ideal of regime self-sufficiency.\cite{LazarusConstellation}\cite{ProfilingEnigmaMystery}
+        Other than executing cyber attacks, North Korea may strategically take credit for cyber attacks that were, in reality, launched by another entity. Whether the targeted entity blames North Korea for the attacks, or the regime simply takes credit for an attack that has not yet been attributed, several goals can come into play. First, to claim credit for an attack amplifies the impact of a show of force, particularly if South Korea is the target. This tactic can be used to stir sentiments in order to provoke a reaction. Second, North Korea may lay claim to responsibility for an attack that exceeds its capabilities in order to seem more technologically advanced and more capable. Third, any success, or the appearance thereof, enforces the juche ideal of regime self-sufficiency.\cite{LazarusConstellation}\cite{ProfilingEnigmaMystery}
         
  
         
@@ -510,33 +510,45 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         Consequently, SWIFT has taken extra measures to secure client banks, including sharing more information, supporting security audits and introducing tougher requirements for local bank computer networks. It is important to remember that none of the attacks succeeded in compromising the SWIFT network and its core messaging services so the effects on the SWIFT network are limited to the reputational damage and loss of trust in the network.
 
-        From the point of view of the consumer there is relatively little to lose from cyberattacks on banks. Most legislations requires banks to refund customers if someone takes money from their account without authorization. Banks themselves instead have fewer assurances if a major cyberattack were executed. According to some experts these attacks could target bank processing systems and disrupt critical financial transactions needed to avoid margin calls, for example, triggering a default. Also, a cyberattack usually lead to a loss of confidence on that bank. 
+        From the point of view of the consumer there is relatively little to lose from cyberattacks on banks. Most regulations requires banks to refund customers if someone takes money from their account without authorization. Banks themselves instead have fewer assurances if a major cyberattack were executed. According to some experts these attacks could target bank processing systems and disrupt critical financial transactions needed to avoid margin calls, for example, triggering a default. Also, a cyberattack usually lead to a loss of confidence on that bank. 
         
         After the attacks SWIFT acted to limit the backlash. For instance, SWIFT said it had signed an agreement with Bangladesh’s central bank to help it rebuild its infrastructure. SWIFT also agreed to provide technical assistance to Bangladesh Bank in its lawsuit against third parties involved in the heist. The firm stated it would continue to lend its support to international efforts to protect the global financial system from cyber attacks. 
         
         As for profits, the banks that collectively own SWIFT saw their profits fell by 31\% as the organization increased its investments in information security.\cite{SecurityInvestmentsConsume}
-        
-         \cite{}\cite{}\cite{}
 
         \subsection{The investigation}
         
-        Links to North Korean Military Units
-        Based on details published in the DOJ complaint against North Korean programmer Park Jin Hyok, we know that APT38 and other cyber operators linked to TEMP.Hermit are associated with Lab 110, an organization subordinate to or synonymous with the 6th Technical Bureau in North Korea's Reconnaissance General Bureau (RGB). The organization is believed to leverage front organizations to mask their activities, including infiltrating networks and gathering intelligence. These relationships are outlined in Figure 3.
+        The United Nations (UN) has opened an investigation into allegations against North Korea and its cyber attacks. Excerpts from a UN report, which suggested North Korea successfully raked in \$2 billion from several attacks it carried out. UN Security Council also reported that North Korean state-backed hackers successfully breached at least five cryptocurrency exchanges in Asia between January 2017 and September 2018, causing \$571 million in losses. 
         
-         \cite{}\cite{}\cite{}
-         
+        According to the panel of experts of the UN Security Council that investigated  the cyberattacks carried out by the North Korea against multiple Member States the main objective of the targeted cyberattacks is to evade financial sanctions by illegally forcing the transfer of funds from financial institutions and cryptocurrency exchanges, laundering the stolen proceeds and generating income.
+        The panel added that it has been targeted itself by cyberattacks. 
+        
+        The practical outcome of the UN investigation is represented by the actions taken by the affected states in order to counter the losses due to cyberattacks.
+        
+        For instance the banking regulator of India has undertaken various preventive measures which include:
+        \begin{itemize}
+            \item Issuing circulars on cyber security controls and on the controls that are required to be put in place for trade finance transactions to avoid misuse of the SWIFT ecosystem, advising the banks to implement controls for strengthening the security environment of the SWIFT infrastructure and to take steps to manage the operational risk surrounding the usage of the SWIFT system, in a time bound manner.
+            \item Conducting special scrutiny of select banks to assess their operational control framework to safeguard against the risk of misuse of the SWIFT ecosystem.
+            \item Issuing a circular to banks advising them to undertake a comprehensive audit of their SWIFT system covering the controls prescribed by the banking regulator.
+            \item Sharing of market intelligence on the SWIFT ecosystem gathered from various sources with banks through the issuance of advisories, which include information on indicators of compromise affecting the SWIFT payment ecosystem and measures prescribed to check for compromise and plug these immediately.
+        \end{itemize}
+        
+        Instead of relying on a passive response, the EU took more active measures. The Council of the EU established a framework which allows the EU to impose targeted restrictive measures, such as asset freezes or travel bans, in order to deter and respond to cyber-attacks. The EU has also begun implementing the Fifth Anti-Money Laundering Directive (AMDL5) which extends the scope of anti-money laundering  rules to include cryptocurrencies. 
+        
+        Another investigation was launched by the United States. Based on details published in the DOJ complaint against North Korean programmer Park Jin Hyok (figure \ref{fig:jin}), an hacker from the Democratic People’s Republic of Korea who worked as a member of the Lazarus Group, we know that APT38 and other cyber operators are associated with Lab 110, an organization subordinate to or synonymous with the 6th Technical Bureau in North Korea's Reconnaissance General Bureau (RGB). On 6 September 2018, the Government of the United States indicted Park Jin Hyok for engaging in a “wide-ranging, multi-year conspiracy to conduct computer intrusions and commit wire fraud by co-conspirators working on behalf of the government of the Democratic People’s Republic of Korea”. According to the United States, Park “has travelled to China in the past and conducted legitimate IT work under the front company ‘Chosun Expo’ in addition to activities conducted on behalf of North Korea’s Reconnaissance General Bureau”. According to the United States, Park Jin Hyok and his co-conspirators also targeted and then executed the fraudulent transfer of \$81million from Bangladesh Bank and engaged in computer intrusions and cyber-heists at many more financial services in the United States, and in other countries in Europe, Asia, Africa, North America and South America since 2015, with losses over \$1billion.
+        
         \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/TESTpark-jin-hyok.png}
+        \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/park-jin-hyok.png}
         \caption{Park Jin Hyok most wanted poster}
-        \label{fig:structure}
+        \label{fig:jin}
         \end{figure}
        
         \subsection{Customer Security Programme and Information Sharing and Analysis Centre}
         
         As a reaction to the cyber-threat landscape, SWIFT has implemented the Customer Security Programme (CSP). This programme requires all SWIFT customers to implement a number of controls defined by SWIFT’s Customer Security Controls Framework (CSCF), to which customers must self-attest compliance. This framework outlines a collection of security controls to ensure a minimal baseline for security is in place across all customers’ local SWIFT deployments.
         
-        Even if SWIFT customers are individually responsible for the security of their own environments, the security of the industry as a whole is a shared responsibility according to SWIFT. As a consequence SWIFT is committed to playing an important role in reinforcing and safeguarding the security of the ecosystem. From SWIFT point of view, this action represent one of the only option in order to safeguard the trust in the network. 
+        Even if SWIFT customers are responsible for the security of their own environments, the security of the industry as a whole is a shared responsibility according to SWIFT. As a consequence SWIFT is committed to playing an important role in reinforcing and safeguarding the security of the ecosystem. From SWIFT point of view, this action represent one of the only option in order to safeguard the trust in the network. 
         
         The CSP is articulated around three mutually reinforcing areas. Customers will first need to protect and secure their local environment in order to safeguard themselves, it is then about preventing and detecting fraud in commercial relationships in order to safeguard network members and continuously sharing information and preparing to defend against future cyber threats.
         
@@ -545,7 +557,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
         However, it is not possible to evaluate the effectiveness of this program because the document detailing the security requirement to implement - the "SWIFT Customer Security Controls Framework Detailed Description" - is not publicly available. 
         
-        Fortunately, I was able to avail myself of a copy of the aforementioned document.
+        Fortunately, I was able to avail myself of a copy of the aforementioned document in its latest version, v2020.
         
         Before diving into the security requirements it is important to observe the timeline of the implementation of such requirements. As we can see in figure \ref{fig:swiftcsp}, SWIFT adopted a change management process to evolve the controls framework. The process is designed to ensure that the SWIFT community has sufficient time (up to 18 months) to understand and implement the changes to the controls requirements. An emergency release may still be required in rare occurrences, to allow for the fix of critical and urgen issues. 
         
@@ -572,7 +584,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth,cfbox=red 0.1mm 0.1mm]{figures/frisk.png}
-        \caption{SWIFT CSP Framework Objectives and Principles}
+        \caption{SWIFT counterparty cybersecurity risk}
         \label{fig:frisk}
         \end{figure}
         
@@ -646,7 +658,7 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         
 \section{The solutions}
         
-        \subsection{CSP partial solution and complementary solutions}
+        \subsection{CSP and complementary solutions}
         The first solution implemented by SWIFT was the aforementioned CSP. Other than being redundant with other standards and regulations the proposed control should not be considered exhaustive or all-inclusive according to own SWIFT statements. 
         Therefore general attack methodologies can still be applied to the system as illustrated in figure \ref{fig:before} and \ref{fig:after}. SWIFT systems are, and will remain, high-profile targets for all threat actors operating with financial motivations. Regardless of the implementation of standard or advanced security controls, there is still a high risk that these systems will have flaws that will be identified, targeted, and exploited by persistent threat actors. This is a consequence of the complex nature of the infrastructure deployed within financial institutions.
         
@@ -681,13 +693,12 @@ RISKS OF FINANCIAL SYSTEMS IN A CYBER ERA\\
         When prevention fails, it is these detection and response capabilities that will ultimately determine the overall financial impact of an institution’s local SWIFT infrastructure being compromised. Therefore, it is important that resources be placed in establishing a mature detection and response strategy surrounding your SWIFT deployment and its upstream systems. The main goal of this is to efficiently contain and recover from an attack.
         Regular incident response exercises should be conducted by financial institutions to ensure that the policies and procedures in place facilitate rapid response to an incident. This should include table-top exercises to test these procedures, as well as full incident response run-throughs based on SWIFT systems. Attack case studies such as the heist of the Bank of Bangladesh should be mapped to the organization’s systems and the response team should work through this to establish if an investigation could have been rapidly conducted on their systems in the event of a similar attack.
         
-        \subsection{}  
-        -deterrent to attack
+      
 
     \begin{flushright}
         \begin{tikzpicture}
         \node[inner sep=0] (image) at (0,0) {\includegraphics[width=0.26\textwidth]{figures/firmaMinello.png}};
-        \node[below=2cm of image] {Giacomo Minello};
+        \node[above=3pt,at=(image.south)] {Giacomo Minello};
         \end{tikzpicture}
     \end{flushright}
     % print biblio with heading in the index
